@@ -1,0 +1,326 @@
+/* The Font @import */
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&family=Cairo:wght@300;400;600&family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    /* Set The Border Sizing to border box */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: box-border;
+    /* Reset the margin & padding */
+    padding:0;
+    margin:0;
+}
+/* Variables */
+:root {
+    --main-color: #081b29;
+    --main-color-alt: #00adf0;
+    --text-color: #ededed;
+}
+/* Width of the Scrollbar */
+::-webkit-scrollbar {
+    width: 15px;
+}
+/* The Track & thumb color + hover */
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #0889bd;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--main-color-alt);
+}
+/* Start Animation Section */
+/* For the Spinner Span around the image */
+@keyframes aboutSpinner {
+        100% {
+            transform: translate(-50%,-50%) rotate(360deg);
+        }
+    }
+/* For the tying Effect */
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+/* For the Slide Effect */
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+/* End Animation Section */
+/* For All the Html */
+html {
+    scroll-behavior: smooth;
+}
+/* For All the Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-color);
+    /* All the text in the site will be this color instead that one you edit */
+    color: var(--text-color);
+}
+/* Reset the ul */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 ;
+}
+/* Disabling the curet in the not input field */
+.disable_curet {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+/* The Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    padding: 10px 5%;
+}
+/* Let the li beside each other horizontal */
+.header nav ul {
+    display: flex;
+}
+/* The Logo in the header [SLT] */
+.header .logo {
+    font-size: 30px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+/* The Links in the header */
+.navbar ul li a {
+    font-size: 18px;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 35px;
+    transition: 0.3s;
+}
+/* When Hovering in the link or the active page that you are in */
+.navbar ul li a:hover,
+.navbar ul li .active {
+    color: var(--main-color-alt);
+}
+/* To let the main content move down */
+.home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 10px 5%;
+}
+/* Let the home content section take the half of the screen */
+.home .home-content {
+    max-width: 50%;
+}
+/* Styling the h1, h3, and the p in the Home Content */
+.home .home-content h1:first-child {
+    font-size: 56px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+/* Styling the Second h1 */
+.home .home-content h1:nth-child(2) {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+/* The Wrapper [typing effect] */
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+/* The First Text [We Are] */
+.wrapper .first-text {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--main-color-alt);
+    margin: 0;
+}
+/* The Second Text in the wrapper with the stroke and the transparent color */
+.wrapper .sec-text {
+    height: 90px;
+    line-height: 90px;
+    font-weight: 700;
+    overflow: hidden;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--main-color-alt);
+    margin: 0;
+}
+/* The li inside the second text */
+.wrapper .sec-text li {
+    position: relative;
+    top: 0;
+    font-size: 60px;
+    padding: 0 20px;
+    /* The Slide Animation */
+    animation: slide 12s steps(4) infinite;
+}
+/* The Span inside the li */
+.sec-text li span {
+    position: relative;
+}
+/* Psedu element [before] for the span */
+.sec-text li span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 90px;
+    background-color: var(--main-color);
+    border-left: 2px solid var(--main-color-alt);
+    /* The Typing Animation */
+    animation: typing 1.5s steps(10) infinite alternate;
+}
+/* The Paragraph in the Home Content [Description for the team] */
+.home .home-content p {
+    font-size: 16px;
+    margin: 20px 0 30px;
+}
+/* Styling the Botton Box */
+.home .home-content .btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px  ;
+}
+/* Style the a inside the botton box */
+.home .home-content .btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background-color: var(--main-color-alt);
+    border: 2px solid var(--main-color-alt);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--main-color);
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+}
+/* Styling the Second Box */
+.home .home-content .btn-box a:nth-child(2) {
+    background-color: var(--main-color);
+    color: var(--main-color-alt);
+}
+/* Second Box when hover */
+.home .home-content .btn-box a:nth-child(2):hover {
+    color: var(--main-color);
+    background-color: var(--main-color-alt);
+}
+/* Styling the first box when hovering */
+.home .home-content .btn-box a:hover {
+    color: var(--main-color-alt);
+    background-color: var(--main-color);
+}
+/* The Team Images */
+.about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* The image it self */
+#image {
+    transition: opacity 1s ease-in-out;
+    border-radius: 50%;
+    width: 60%;
+    border: .2rem solid var(--main-color-alt);
+}
+/* The spinner around the image */
+.about-img .spin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(0);
+    width: 68%;
+    height: 68%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--main-color);
+    border-bottom: .2rem solid var(--main-color);
+    border-left: .2rem solid var(--main-color-alt);
+    border-right: .2rem solid var(--main-color-alt);
+    animation: aboutSpinner 8s linear infinite;
+}
+/* The Whole Team image Container*/
+.team-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 130px;
+}
+/* Styling the image it self */
+.team-img img {
+    position: relative;
+    width: 450px;
+    border-radius: 12px;
+    border: 3px solid var(--main-color-alt);
+}
+/* The Footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+/* Styling Social Media Box*/
+.footer .home-sci {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    margin-bottom: 70px;
+    width: 170px;
+}
+/* Every icon inside the Social Media Box */
+.footer .home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--main-color-alt);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color-alt);
+    text-decoration: none;
+    background-color: transparent;
+    transition: 0.3s;
+}
+/* The Icon When Hovering */
+.footer .home-sci a:hover {
+    background-color: var(--main-color-alt);
+    color: var(--main-color);
+}
+/* The Paragraph in the Footer */
+.footer .copyright {
+    margin-top: 60px;
+}
+/* The Span inside the paragraph [SLT | SIS] */
+.footer .copyright span {
+    font-weight: 500;
+    color: var(--main-color-alt);
+}
+/* End Home Page */
