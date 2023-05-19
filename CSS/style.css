@@ -11,9 +11,16 @@
 }
 /* Variables */
 :root {
-    --main-color: #081b29;
-    --main-color-alt: #00adf0;
-    --text-color: #ededed;
+    --main-color: #103f61;
+    --main-color-alternate: #2b6893;
+    --main-color-alt: #48b3dd;
+    --text-color: #ffffff;
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #e7a22a;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
 }
 /* Width of the Scrollbar */
 ::-webkit-scrollbar {
@@ -60,6 +67,8 @@ body {
     background-color: var(--main-color);
     /* All the text in the site will be this color instead that one you edit */
     color: var(--text-color);
+    /* Setting the minimum view port to 100 */
+    min-height: 100vh;
 }
 /* Reset the ul */
 ul {
@@ -79,11 +88,14 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: relative;
     top: 15px;
     left: 0;
     width: 100%;
     padding: 10px 5%;
+    -webkit-box-shadow: -8px 15px 136px -137px rgba(255,255,255,0.45);
+    -moz-box-shadow: -8px 15px 136px -137px rgba(255,255,255,0.45);
+    box-shadow: -8px 15px 136px -137px rgba(255,255,255,0.45);
 }
 /* Let the li beside each other horizontal */
 .header nav ul {
@@ -95,6 +107,9 @@ ul {
     color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
+}
+.header .logo img {
+    width: 40px;
 }
 /* The Links in the header */
 .navbar ul li a {
@@ -113,7 +128,7 @@ ul {
 .home {
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 91vh;
     padding: 10px 5%;
 }
 /* Let the home content section take the half of the screen */
@@ -131,6 +146,7 @@ ul {
     font-size: 50px;
     font-weight: 700;
     margin: 0 0 15px;
+    color: var(--orange-color);
 }
 /* The Wrapper [typing effect] */
 .wrapper {
@@ -182,6 +198,7 @@ ul {
 /* The Paragraph in the Home Content [Description for the team] */
 .home .home-content p {
     font-size: 16px;
+    line-height: 1.5;
     margin: 20px 0 30px;
 }
 /* Styling the Botton Box */
@@ -211,6 +228,9 @@ ul {
     overflow: hidden;
     z-index: 1;
     transition: 0.5s;
+    -webkit-box-shadow: -8px 15px 136px -88px rgba(255,255,255,0.45);
+    -moz-box-shadow: -8px 15px 136px -88px rgba(255,255,255,0.45);
+    box-shadow: -8px 15px 136px -88px rgba(255,255,255,0.45);
 }
 /* Styling the Second Box */
 .home .home-content .btn-box a:nth-child(2) {
@@ -234,6 +254,7 @@ ul {
     height: 25rem;
     border-radius: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -247,14 +268,14 @@ ul {
 /* The spinner around the image */
 .about-img .spin{
     position: absolute;
-    top: 50%;
+    top: 31%;
     left: 50%;
     transform: translate(-50%,-50%) rotate(0);
     width: 68%;
     height: 68%;
     border-radius: 50%;
-    border-top: .2rem solid var(--main-color);
-    border-bottom: .2rem solid var(--main-color);
+    border-top: .2rem solid transparent;
+    border-bottom: .2rem solid transparent;
     border-left: .2rem solid var(--main-color-alt);
     border-right: .2rem solid var(--main-color-alt);
     animation: aboutSpinner 8s linear infinite;
@@ -265,24 +286,41 @@ ul {
     justify-content: center;
     align-items: center;
     position: relative;
+    display: block;
+    margin-top: 70px;
     left: 130px;
+    overflow: hidden;
 }
 /* Styling the image it self */
 .team-img img {
-    position: relative;
     width: 450px;
     border-radius: 12px;
     border: 3px solid var(--main-color-alt);
+}
+.mem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+.mem-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
 }
 /* The Footer */
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 40px;
     position: relative;
     color: white;
     text-align: center;
+    margin-top: auto;
+    padding-bottom: 10px;
 }
 /* Styling Social Media Box*/
 .footer .home-sci {
@@ -308,6 +346,9 @@ ul {
     text-decoration: none;
     background-color: transparent;
     transition: 0.3s;
+    -webkit-box-shadow: -8px 15px 136px -72px rgba(255,255,255,0.45);
+    -moz-box-shadow: -8px 15px 136px -72px rgba(255,255,255,0.45);
+    box-shadow: -8px 15px 136px -72px rgba(255,255,255,0.45);
 }
 /* The Icon When Hovering */
 .footer .home-sci a:hover {
@@ -324,3 +365,244 @@ ul {
     color: var(--main-color-alt);
 }
 /* End Home Page */
+
+
+
+/* Team Page */
+.team-page {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    height: 91vh;
+    padding: 10px 5%;
+}
+.team-page > h1 {
+    font-size: 62px;
+    font-weight: 900;
+    margin-top: 80px;
+    padding: 10px;
+    border-bottom: 3px solid var(--blue-color);
+    background-color: var(--blue-color);
+    transform: skew(-10deg);
+}
+.footer {
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
+    align-items: center;
+}
+.about,.skills {
+    padding: 40px;
+    min-height: 330px;
+}
+.about {
+    background-color: white;
+    color: black;
+    max-height: 330px;
+    overflow: hidden;
+    -webkit-box-shadow: -8px 15px 134px -105px rgba(255,255,255,0.45);
+    -moz-box-shadow: -8px 15px 134px -105px rgba(255,255,255,0.45);
+    box-shadow: -8px 15px 134px -105px rgba(255,255,255,0.45);
+}
+.about h3 {
+    margin-bottom: 25px;
+}
+.skills {
+    background-color: #1f54bf;
+    color: #f5f5f5;
+    max-height: 330px;
+    -webkit-box-shadow: -8px 15px 134px -105px rgba(255,255,255,0.45);
+    -moz-box-shadow: -8px 15px 134px -105px rgba(255,255,255,0.45);
+    box-shadow: -8px 15px 134px -105px rgba(255,255,255,0.45);
+}
+.skills h2 {
+    margin-bottom: 20px;
+}
+.skills .progress {
+    margin-bottom: 30px;
+    margin-top: 7px;
+}
+.skills h5 {
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: var(--text-color);
+}
+.skills .progress-bar {
+    background-color: #0067ff;
+}
+.about-img .image {
+    transition: opacity 1s ease-in-out;
+    border-radius: 50%;
+    width: 60%;
+    border: .2rem solid var(--main-color-alt);
+    -webkit-box-shadow: -8px 15px 136px -75px rgba(255,255,255,0.45);
+    -moz-box-shadow: -8px 15px 136px -75px rgba(255,255,255,0.45);
+    box-shadow: -8px 15px 136px -75px rgba(255,255,255,0.45);
+}
+.about-img h1 {
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.about-img h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: var(--orange-color);
+}
+/* Projects Page */
+
+.prj-page .container {
+    width: 75%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 5%;
+    border-radius: 10px;
+    background-color: white;
+  }
+  .prj-page .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .prj-page h4 { /* added this block */
+    color: black;
+    margin-bottom: 10px;
+  }
+  .prj-page .description {
+    color: black;
+    font-size: 18px;
+    margin-top: 10px;
+    text-transform: capitalize;
+  }
+  .prj-page .choose {
+    color: black;
+    font-size: 18px;
+  }
+  .prj-page .links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  .prj-page .links ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .prj-page .links ul li a{
+    appearance: none;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: white;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+  .prj-page .links ul li a:hover {
+    background-color: var(--main-color-alternate);
+  }
+  .prj-page  {
+    padding: 8% 5%;
+  }
+  /* Projects */
+  .courses-page {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    padding: 2% 5%;
+}
+.courses-page .course {
+    overflow: hidden;
+}
+.courses-page .course .cover {
+    min-width: 100%;
+}
+.courses-page .course .info {
+    border-top: 1px solid #eee;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.courses-page .course .info .title {
+    text-decoration: none;
+}
+.courses-page .course h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    left: 34px;
+    top: 4%;
+}
+/* About Team */
+/* Start Friends Page */
+.friends-page {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.friends-page .friend {
+    position: relative;
+    color: black;
+}
+.page .content {
+    padding: 4% 3%;
+}
+@media (max-width: 767px) {
+    .friends-page {
+        grid-template-columns:minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+.friends-page .contact {
+    position: absolute;
+    left: 10px;
+    top: 10px
+}
+.friends-page .contact i {
+    background-color: #eee;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+}
+.friends-page .friend .info div a {
+    text-decoration: none;
+}
+.friends-page .contact i:hover {
+    background: var(--blue-color);
+    color: white;
+}
+.friends-page .friend .icons {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee; 
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.friends-page .friend .icons i {
+    margin-right: 5px;
+}
+.friends-page .friend .icons .vip {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    opacity: 0.2;
+}
+/* End Friends Page */
